@@ -1,39 +1,9 @@
-Implement an interpreter for a programming language that I came up with. We call this language HUNLAN.
-HUNLAN is very primitive but still it is a programming language. Interpreter we write is very primitive but still it is an interpreter like Python or JavaScript interpreters.
-I will take your program and compile it. Then, the resulting executable will be used to run program files, same way you do it in Python. From your source code, I will create an executable named hunlan with the following command
->>> g++  -std=c++17  *.cpp  -o hunlan
-Later, I create a plain txt file mycode.hun with the program code in HUNLAN. Then, I execute this code the following way
->>> ./hunlan  mycode.hun
-In case the interpreter finds incorrect instruction in the source code, it shows an error message with the line number where the error occurred. The message should look like “ERROR: Bad instruction in Line 28”. Specifying the exact problem isn’t necessary. Program lines are enumerated starting from 1. Empty lines are also enumerated. Lines with comments are also enumerated. In other words, line enumeration happens the same way it happens in any editor and compiler.
-You must implement a decent program structure and decent programming style. Whole program in one main function or variable names like o, p, r will be heavily penalized.
- 
-See below the description of HUNLAN. This language
-Accepts one instruction per line
-Allows empty lines with no instructions
-Everything starting with # till the end of the line is ignored. In other words, # is a symbol of one-line comment.
-Is case-sensitive
-Separators include spaces and tabs. Instructions can have multiple leading and trailing separators.
- 
-Has variables of two datatypes: NUMBER and STRING
-NUMBER is a 8-Byte integer
-STRING is a string
-Variable declaration looks like this
-datatype  variable_name
-Variable naming rules follow C++ variable naming rules
- 
-There are numeric literals consisting of only digits.
-There are string literals consisting of any ASCII characters except double-quotation marks. String literal must be enclosed in double-quotation marks. Enclosing double-quotation marks aren’t a part of a literal. In terms of escape sequences, HUNLAN strings behave exactly like C++  strings.
-There’s an assignment operator = .
-Assignment of numeric values to string variables is prohibited. Assignment of string values to numeric variables is also prohibited.
- 
-There are mathematical expressions with numeric variables and literal using operators +, –, * (no division). The precedence rules work as usual.
-Usage of string variables or string literals anywhere in expression is prohibited.
-Assigning the value of one string variable to another string variable is allowed.
-Pay attention, there are no negative value literals in HUNLAN, but negative values of variables and expressions are allowed.
- 
-There’s a PRINT command that prints one single variable or literal of any type.
-Using PRINT with more than one variable or literal is prohibited.
-Supplying mathematical expressions to PRINT is prohibited.
- 
-Multiple variable declarations cause unspecified behaviour. In means that your program can react on it in any way, including crashes, error messages or silent execution of the program further.
-"Multiple variable declaration" means declaring variable with the same name more than once. Your program is free to react in any way.
+This project entails building an interpreter for the HUNLAN programming language, a minimalistic yet functional programming language. The HUNLAN interpreter, similar to interpreters for mainstream languages like Python and JavaScript, undergoes compilation using the "g++" command to create an executable named "hunlan." Users can run HUNLAN code stored in plain text files by executing "./hunlan filename.hun." If the interpreter encounters incorrect instructions in the code, it issues error messages with line numbers, such as "ERROR: Bad instruction in Line 28," where line enumeration starts from 1 and includes empty lines and comments.
+
+HUNLAN is designed with simplicity in mind and features straightforward syntax rules. It accepts one instruction per line, permits empty lines, and recognizes comments marked with a "#" symbol. The language is case-sensitive and utilizes spaces and tabs as separators, allowing instructions to have multiple leading and trailing separators.
+
+HUNLAN supports two data types: NUMBER (8-byte integers) and STRING. Variable declaration adheres to C++ naming conventions, and assignment operators, including "=", are used to assign values to variables. Numeric literals consist of digits, while string literals encompass any ASCII characters except double-quotation marks, with the literals enclosed in double-quotation marks (which are not part of the literal). Escape sequences in HUNLAN strings operate identically to C++ strings.
+
+Mathematical expressions involving numeric variables and literals are permitted, with the operators "+," "-", and "*" (no division). Precedence rules apply as expected, but the use of string variables or literals within expressions is prohibited. However, assigning one string variable's value to another is allowed. HUNLAN does not include negative value literals but permits negative values for variables and expressions.
+
+The language provides a PRINT command for displaying a single variable or literal of any type, with the prohibition of using PRINT with multiple variables or literals or supplying mathematical expressions as arguments. Lastly, handling multiple variable declarations leads to unspecified behavior, which means the program's response can vary, including crashes, error messages, or silent execution. Multiple variable declarations refer to declaring a variable with the same name more than once, and the program can react in any way it chooses.
