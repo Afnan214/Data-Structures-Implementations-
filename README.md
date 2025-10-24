@@ -10,16 +10,7 @@ A compact, well-documented collection of classic data structures with clear APIs
 - [Overview](#overview)
 - [Implemented Structures](#implemented-structures)
 - [Complexity Cheat Sheet](#complexity-cheat-sheet)
-- [Project Layout](#project-layout)
-- [Getting Started](#getting-started)
-- [Examples](#examples)
-- [Tests](#tests)
 - [Benchmarks](#benchmarks)
-- [Design Notes](#design-notes)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-
 ---
 
 ## Overview
